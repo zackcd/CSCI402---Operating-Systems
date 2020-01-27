@@ -1,0 +1,14 @@
+warmup1: warmup1.o my402list.o listFuncs.o
+	gcc -o warmup1 -g warmup1.o my402list.o listFuncs.o
+
+warmup1.o: my402list.h my402list.c listFuncs.h
+	gcc -g -c -Wall warmup1.c
+
+my402list.o: my402list.h my402list.c 
+	gcc -g -c -Wall my402list.c
+
+listFuncs.o: my402list.h listFuncs.h listFuncs.c
+	gcc -g -c -Wall listFuncs.c
+
+clear
+	rm -f *.o warmup1
